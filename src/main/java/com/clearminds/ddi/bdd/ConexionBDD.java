@@ -1,13 +1,15 @@
 package com.clearminds.ddi.bdd;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Properties;
 
 import com.clearminds.ddi.excepciones.BDDException;
-
-import java.sql.*;
 
 public class ConexionBDD {
 
@@ -15,6 +17,8 @@ public class ConexionBDD {
 		Properties p = new Properties();
 		String valorPropiedad = null;
 		try {
+			File f = new File("conexion.properties");
+			System.out.println("Ruta:"+ f.getAbsolutePath());
 			p.load(new FileReader("conexion.properties"));
 			valorPropiedad = p.getProperty(nombrePropiedad);
 
