@@ -45,14 +45,14 @@ public class ConexionBDD {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new BDDException("No se pudo abrir la conexión con las propiedades indicadas.");
-		} finally {
+		}/* finally {
 			try {
 				if (conn != null)
 					conn.close();
 			} catch (SQLException se) {
 				se.printStackTrace();
 			}
-		}
+		}*/
 
 	}
 
